@@ -6,7 +6,7 @@
 /*   By: moel-fat <moel-fat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 09:02:49 by moel-fat          #+#    #+#             */
-/*   Updated: 2024/10/24 14:05:13 by moel-fat         ###   ########.fr       */
+/*   Updated: 2024/10/24 17:43:49 by moel-fat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,8 +78,8 @@ void PhoneBook::search()
     // Ensure input is a single character and a digit
     if (tmp.length() == 1 && std::isdigit(tmp[0]))
     {
-        // search_index = std::atoi(tmp.c_str());
-        search_index = std::stoi(tmp);
+        search_index = std::atoi(tmp.c_str());
+        // search_index = std::stoi(tmp);
 
         // Validate if the index is within the correct range
         if (search_index >= 0 && search_index < 8)
