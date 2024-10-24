@@ -1,11 +1,10 @@
-CC = c++
+CC = g++
 
 CFLAGS = -std=c++98 -Wall -Wextra -Werror
 
-NAME = PhoneBook
+NAME = Brain
 
-SRCS = main.cpp contact.cpp PhoneBook.cpp
-
+SRCS = main.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)
@@ -13,7 +12,7 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
-%.o: %.cpp PhoneBook.hpp contact.hpp
+%.o: %.cpp
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:

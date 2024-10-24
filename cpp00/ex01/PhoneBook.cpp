@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: doliprane <doliprane@student.42.fr>        +#+  +:+       +#+        */
+/*   By: moel-fat <moel-fat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 09:02:49 by moel-fat          #+#    #+#             */
-/*   Updated: 2024/10/03 14:22:48 by doliprane        ###   ########.fr       */
+/*   Updated: 2024/10/24 14:05:13 by moel-fat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,26 +63,40 @@ void PhoneBook::add() {
         contacts[index].setPhoneNumber(phone_number);
         contacts[index].setDarkestSecret(darkest_secret);
         index = (index + 1) % 8;
-        break;
+        break ;
     }
 }
 
-
 void PhoneBook::search()
 {
-	int search_index;
-	std:: cout << "pls enter the index to search for :" << std::endl;
-	std:: cin >> search_index ;
-    std::cin.ignore(1024, '\n');
-    if (search_index < 0 || search_index >= 8)
-    {
-        std::cout << "Invalid index!" << std::endl;
-        return;
-    }
+    int search_index;
+    std::string tmp;
 
-    std::cout << "First Name: " << contacts[search_index].getFirstName() << std::endl;
-    std::cout << "Last Name: " << contacts[search_index].getLastName() << std::endl;
-    std::cout << "Nickname: " << contacts[search_index].getNickname() << std::endl;
-    std::cout << "Phone Number: " << contacts[search_index].getPhoneNumber() << std::endl;
-    std::cout << "Darkest Secret: " << contacts[search_index].getDarkestSecret() << std::endl;
+    std::cout << "Please enter the index to search for: " << std::endl;
+    std::getline(std::cin, tmp);
+
+    // Ensure input is a single character and a digit
+    if (tmp.length() == 1 && std::isdigit(tmp[0]))
+    {
+        // search_index = std::atoi(tmp.c_str());
+        search_index = std::stoi(tmp);
+
+        // Validate if the index is within the correct range
+        if (search_index >= 0 && search_index < 8)
+        {
+            std::cout << "First Name: " << contacts[search_index].getFirstName() << std::endl;
+            std::cout << "Last Name: " << contacts[search_index].getLastName() << std::endl;
+            std::cout << "Nickname: " << contacts[search_index].getNickname() << std::endl;
+            std::cout << "Phone Number: " << contacts[search_index].getPhoneNumber() << std::endl;
+            std::cout << "Darkest Secret: " << contacts[search_index].getDarkestSecret() << std::endl;
+        }
+        else
+        {
+            std::cout << "Invalid index!" << std::endl;
+        }
+    }
+    else
+    {
+        std::cout << "Invalid input! Please enter a digit between 0 and 7." << std::endl;
+    }
 }
