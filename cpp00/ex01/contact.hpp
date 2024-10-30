@@ -6,7 +6,7 @@
 /*   By: moel-fat <moel-fat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 09:02:52 by moel-fat          #+#    #+#             */
-/*   Updated: 2024/10/01 10:55:39 by moel-fat         ###   ########.fr       */
+/*   Updated: 2024/10/30 15:01:26 by moel-fat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,11 @@ class Contact
 		std::string darkest_secret;
 
 	public:
-		// Setter declarations
 		void setFirstName(const std::string &fname);
 		void setLastName(const std::string &lname);
 		void setNickname(const std::string &nname);
 		void setPhoneNumber(const std::string &pnumber);
 		void setDarkestSecret(const std::string &secret);
-		// Getter declarations
 		std::string getFirstName() const;
 		std::string getLastName() const;
 		std::string getNickname() const;
