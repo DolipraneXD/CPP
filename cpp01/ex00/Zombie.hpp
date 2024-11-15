@@ -6,7 +6,7 @@
 /*   By: moel-fat <moel-fat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 11:34:21 by moel-fat          #+#    #+#             */
-/*   Updated: 2024/10/12 11:34:22 by moel-fat         ###   ########.fr       */
+/*   Updated: 2024/11/06 11:10:42 by moel-fat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ class Zombie
 {
 	private:
 		std::string name;
-
 	public:
 		Zombie(std::string name);
 		~Zombie();

@@ -6,7 +6,7 @@
 /*   By: moel-fat <moel-fat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 16:34:30 by moel-fat          #+#    #+#             */
-/*   Updated: 2024/10/13 11:27:47 by moel-fat         ###   ########.fr       */
+/*   Updated: 2024/11/06 16:12:35 by moel-fat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,5 @@ int main()
 	std::cout<< "The value pointed to by stringPTR: " << *stringPTR << std::endl;
 	std::cout<< "The value pointed to by stringREF: " << stringREF << std::endl;
 
-	return 0;
+	return (0);
 }

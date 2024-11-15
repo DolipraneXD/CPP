@@ -6,7 +6,7 @@
 /*   By: moel-fat <moel-fat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 12:09:59 by moel-fat          #+#    #+#             */
-/*   Updated: 2024/10/30 13:14:20 by moel-fat         ###   ########.fr       */
+/*   Updated: 2024/11/12 16:18:14 by moel-fat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 int main(int ac, char **av)
 {
-	Harl allo;
+	Harl first;
 	if (ac != 2)
 	{
 		std::cout << "error: bad arguments" <<std::endl;
@@ -23,6 +23,6 @@ int main(int ac, char **av)
 	}
 	std::string level;
 	level = av[1];
-	allo.complain(level);
+	first.complain(level);
 
 }

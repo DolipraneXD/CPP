@@ -6,7 +6,7 @@
 /*   By: moel-fat <moel-fat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 11:36:09 by moel-fat          #+#    #+#             */
-/*   Updated: 2024/10/12 11:36:13 by moel-fat         ###   ########.fr       */
+/*   Updated: 2024/11/06 16:06:20 by moel-fat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,12 @@ class Zombie
 		std::string name;
 
 	public:
-		Zombie();  // Default constructor
-		Zombie(std::string name);  // Constructor with a name
-		~Zombie();  // Destructor
-		void announce();  // Function for announcing the zombie
-		void setName(std::string name);  // Function to set the zombie's name
+		Zombie();
+		Zombie(std::string name);
+		~Zombie();
+		void announce();
+		void setName(std::string name);
 };
 
 Zombie* zombieHorde( int N, std::string name );
-
 #endif

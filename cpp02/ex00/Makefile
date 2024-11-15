@@ -2,9 +2,9 @@ CC = c++
 
 CFLAGS = -std=c++98 -Wall -Wextra -Werror
 
-NAME = DreamJob
+NAME = Fixed
 
-SRCS = Account.cpp tests.cpp main.cpp
+SRCS = main.cpp Fixed.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)
@@ -12,7 +12,7 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
-%.o: %.cpp Account.hpp
+%.o: %.cpp Fixed.hpp
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:

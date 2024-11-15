@@ -6,12 +6,15 @@
 /*   By: moel-fat <moel-fat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 12:07:42 by moel-fat          #+#    #+#             */
-/*   Updated: 2024/10/26 17:37:36 by moel-fat         ###   ########.fr       */
+/*   Updated: 2024/11/12 15:27:24 by moel-fat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <ios>
 #include <iostream>
+#include <sstream>
 #include <fstream>
+#include <ostream>
 #include <string>
 
 void ft_replace(std::string line, std::string s1, std::string s2, std::ofstream& outfile)
@@ -26,23 +29,21 @@ void ft_replace(std::string line, std::string s1, std::string s2, std::ofstream&
 		start = found + s1.length();
 	}
 	tmp += line.substr(start);
-	outfile << tmp << '\n';
+	outfile << tmp ;
 }
 
 int main(int ac, char **av)
 {
-
 	std::string filename;
 	std::string s1;
 	std::string s2;
-
+	std::stringstream ss;
 
 	if (ac != 4)
 	{
-		std::cerr << "error: need 3 argument" << std::endl;
+		std::cerr << "Use: ./losers <filename> <to_find> <replace>." << std::endl;
 		return (1);
 	}
-
 	filename = av[1];
 	s1 = av[2];
 	s2 = av[3];
@@ -59,13 +60,10 @@ int main(int ac, char **av)
 		return (1);
 	}
 	std::ofstream outfile(filename + ".replace");
-	std::string line;
-
-	while (std::getline(infile, line))
-	{
-		ft_replace(line, s1, s2, outfile);
-	}
+	ss << infile.rdbuf();
+	ft_replace(ss.str(), s1, s2, outfile);
 	infile.close();
 	outfile.close();
 	return (0);
 }
+

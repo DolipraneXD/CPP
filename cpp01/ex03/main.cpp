@@ -6,13 +6,14 @@
 /*   By: moel-fat <moel-fat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 11:43:01 by moel-fat          #+#    #+#             */
-/*   Updated: 2024/10/14 15:58:50 by moel-fat         ###   ########.fr       */
+/*   Updated: 2024/11/07 11:52:20 by moel-fat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanA.hpp"
 #include "HumanB.hpp"
 #include "Weapon.hpp"
+
 int main()
 {
 	{
