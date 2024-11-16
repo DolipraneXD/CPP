@@ -6,7 +6,7 @@
 /*   By: moel-fat <moel-fat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 13:09:20 by moel-fat          #+#    #+#             */
-/*   Updated: 2024/10/30 14:15:31 by moel-fat         ###   ########.fr       */
+/*   Updated: 2024/11/16 07:56:46 by moel-fat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,7 @@ void Harl::complain(std::string level)
 		(this->*ptr[2])();
 	case 3:
 		(this->*ptr[3])();
+		break ;
 	default:
 		std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 		return ;
