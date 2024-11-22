@@ -1,28 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.cpp                                         :+:      :+:    :+:   */
+/*   Point.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moel-fat <moel-fat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/13 11:43:05 by moel-fat          #+#    #+#             */
-/*   Updated: 2024/10/14 15:58:12 by moel-fat         ###   ########.fr       */
+/*   Created: 2024/11/22 15:18:15 by moel-fat          #+#    #+#             */
+/*   Updated: 2024/11/22 15:26:09 by moel-fat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanB.hpp"
+#ifndef POINT_HPP
+# define POINT_HPP
 
-HumanB::HumanB(const std::string &name): name(name), weapon(NULL){}
+#include "Fixed.hpp"
 
-void HumanB::setWeapon(Weapon &newweapon)
+class Point
 {
-	weapon = &newweapon;
-}
+	private:
+		Fixed const x;
+		Fixed const y;
+	public:
+		Point();
+		Point& operator = (const Point& var);
+		Point(const Point& var);
+		Point(const float fx, const float fy);
+		~Point();
 
-void HumanB::attack()
-{
-	if (weapon)
-		std::cout << name << "attacks with their " << weapon->getType() << std::endl;
-	else
-		std::cout << name << " has no weapon to attack with!" << std::endl;
-}
+		Fixed getX() const;
+		Fixed getY() const;
+};
+
+bool bsp(Point const a, Point const b, Point const c, Point const tofind);
+
+#endif

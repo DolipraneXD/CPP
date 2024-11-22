@@ -1,20 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moel-fat <moel-fat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/12 11:34:39 by moel-fat          #+#    #+#             */
-/*   Updated: 2024/11/06 16:01:29 by moel-fat         ###   ########.fr       */
+/*   Created: 2024/11/15 13:08:29 by moel-fat          #+#    #+#             */
+/*   Updated: 2024/11/22 15:15:31 by moel-fat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Fixed.hpp"
+#include <ostream>
 
-Zombie* newZombie(std::string name)
+int main( void )
 {
-	Zombie *nz = new Zombie(name);
-	return nz;
-}
 
+}

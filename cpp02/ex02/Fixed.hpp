@@ -6,7 +6,7 @@
 /*   By: moel-fat <moel-fat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 16:32:54 by moel-fat          #+#    #+#             */
-/*   Updated: 2024/11/17 19:32:17 by moel-fat         ###   ########.fr       */
+/*   Updated: 2024/11/21 15:47:05 by moel-fat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,37 @@ class Fixed
 		~Fixed();
 		Fixed(int intVlaue);
 		Fixed(float floatValue);
+
 		int getRawBits(void) const;
 		void setRawBits(int const raw);
+
 		float toFloat(void) const;
 		int toInt(void) const;
+		// first part (>, <, >=, <=, ==, and !=)
+		bool operator > (const Fixed &var) const;
+		bool operator < (const Fixed &var) const;
+		bool operator >= (const Fixed &var) const;
+		bool operator <= (const Fixed &var) const;
+		bool operator == (const Fixed &var) const;
+		bool operator != (const Fixed &var) const;
+
+		//second part + - * /
+		Fixed operator + (const Fixed &var) const;
+		Fixed operator - (const Fixed &var) const;
+		Fixed operator * (const Fixed &var) const;
+		Fixed operator / (const Fixed &var) const;
+
+		//three part ++ --
+		Fixed operator ++();
+		Fixed operator ++(int);
+		Fixed operator --();
+		Fixed operator --(int);
+
+		//four part
+		static Fixed& min(Fixed& a, Fixed& b);
+		static const Fixed& min(const Fixed& a, const Fixed& b);
+		static Fixed& max(Fixed& a, Fixed& b);
+		static const Fixed& max(const Fixed& a, const Fixed& b);
 };
 
 std::ostream& operator<<(std::ostream& out, const Fixed& Fixed);

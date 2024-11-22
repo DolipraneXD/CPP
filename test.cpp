@@ -176,3 +176,170 @@
 
 //     return 0;
 // }
+
+// #include <iostream>
+// #include <ostream>
+
+// class test
+// {
+// 	int a;
+// 	public:
+// 	test(void);
+// 	~test();
+// };
+
+// test::test()
+// {
+// 	std::cout << "constractor called" << std::endl;
+// }
+// test::~test()
+// {
+// 	std::cout << "deconstractor called" << std::endl;
+// }
+
+// int main()
+// {
+// 	test *a = new test();
+// 	delete a;
+
+
+// }
+
+
+// int main()
+// {
+// 	char *a = "amine";
+// 	char *b = "amine";
+// }
+
+#include <cstdio>
+#include <cstring>
+#include <libc.h>
+#include <sys/fcntl.h>
+
+char	*ft_strchr(const char *s, int c)
+{
+	char	d;
+	char	*ss;
+	size_t	i;
+
+	ss = (char *) s;
+	d = (char) c;
+	i = 0;
+	while (ss[i])
+	{
+		if (ss[i] != d)
+			i++;
+		else
+			return (&ss[i]);
+	}
+	if (d == '\0')
+	{
+		return (&ss[i]);
+	}
+	return (NULL);
+}
+
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+{
+	size_t	i;
+	size_t	srclen;
+
+	srclen = strlen(src);
+	i = 0;
+	if (dstsize == 0)
+	{
+		return (srclen);
+	}
+	else
+	{
+		while (i < dstsize - 1 && src[i])
+		{
+			dst[i] = src[i];
+			i++;
+		}
+		dst[i] = '\0';
+		return (srclen);
+	}
+}
+
+char	*ft_strjoin(char *s1, char *s2)
+{
+	size_t	tlen;
+	char	*s;
+
+	if (s1 == NULL)
+		return (strdup(s2));
+	if (s2 == NULL)
+		return (strdup(s1));
+	tlen = strlen(s1) + strlen(s2) +1;
+	s = (char *) malloc (tlen);
+	if (s == NULL)
+	{
+		free(s1);
+		return (NULL);
+	}
+	strlcpy(s, s1, tlen);
+	strlcpy(s + strlen(s1), s2, tlen);
+	return (free(s1), s1 = NULL, s);
+}
+
+char	*ft_strdup(char *s1)
+{
+	size_t	i;
+	size_t	len;
+	char	*ptr;
+
+	i = 0;
+	len = strlen(s1) + 1;
+	ptr = (char *) malloc(len * sizeof(char));
+	if (ptr == NULL)
+	{
+		return (NULL);
+	}
+	while (s1[i])
+	{
+		ptr[i] = s1[i];
+		i++;
+	}
+	ptr[i] = '\0';
+	return (ptr);
+}
+
+char	*ft_strndup(char *s1, size_t n)
+{
+	size_t	i;
+	char	*ptr;
+
+	i = 0;
+	ptr = (char *) malloc((n + 1) * sizeof(char));
+	if (ptr == NULL)
+	{
+		return (NULL);
+	}
+	while (i < n && s1[i] != '\0')
+	{
+		ptr[i] = s1[i];
+		i++;
+	}
+	ptr[i] = '\0';
+	return (ptr);
+}
+
+
+int main()
+{
+	char *buf;
+	char *tmp = (char *) malloc(100);
+	int fd = open("test.txt", O_RDWR, 0777);
+
+	while(read(fd, tmp, 100))
+	{
+		if (tmp && !strchr(tmp, '\n'))
+		{
+			break ;
+		}
+		buf = ft_strjoin(buf, tmp);
+	}
+	printf("%s\n", buf);
+}

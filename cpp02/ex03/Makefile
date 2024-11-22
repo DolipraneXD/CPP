@@ -1,10 +1,10 @@
 CC = c++
 
 CFLAGS = -std=c++98 -Wall -Wextra -Werror
+INCLUDES = Fixed.hpp Point.hpp
+NAME = BSP
 
-NAME = Zombie
-
-SRCS = main.cpp Zombie.cpp zombieHorde.cpp
+SRCS = main.cpp Fixed.cpp Point.cpp bsp.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)
@@ -12,7 +12,7 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
-%.o: %.cpp Zombie.hpp
+%.o: %.cpp Fixed.hpp
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
