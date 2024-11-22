@@ -6,7 +6,7 @@
 /*   By: moel-fat <moel-fat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 15:18:13 by moel-fat          #+#    #+#             */
-/*   Updated: 2024/11/22 15:41:01 by moel-fat         ###   ########.fr       */
+/*   Updated: 2024/11/22 19:09:31 by moel-fat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ Point::Point(): x(0), y(0)
 {
 
 }
+
+Point::~Point(){};
 
 Point::Point(const float fx, const float fy) : x(fx), y(fy)
 {
@@ -30,6 +32,10 @@ Point::Point(const Point& var) : x(var.x), y(var.y)
 
 Point &Point::operator=(const Point& var)
 {
+	if (this != &var){
+		(Fixed)this->x = var.x;
+		(Fixed)this->y = var.y;
+	}
 	return (*this);
 }
 

@@ -6,7 +6,7 @@
 /*   By: moel-fat <moel-fat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 15:42:17 by moel-fat          #+#    #+#             */
-/*   Updated: 2024/11/22 18:32:38 by moel-fat         ###   ########.fr       */
+/*   Updated: 2024/11/22 19:03:00 by moel-fat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,24 @@
 // }
 
 
-Fixed calculate(Point const &a, Point const &b, Point const &c)
+float calculate(Point const &a, Point const &b, Point const &c)
 {
-	Fixed tmp = Fixed(0.5f) * (a.getX() * (b.getY() - c.getY()) + b.getX()*(c.getY()-a.getY()) + c.getX() * (a.getY() - b.getY()));
-	return tmp;
+	return ((0.5f) * (a.getX().toFloat() * (b.getY().toFloat() - c.getY().toFloat())
+			+ b.getX().toFloat()*(c.getY().toFloat()-a.getY().toFloat())
+			+ c.getX().toFloat() * (a.getY().toFloat() - b.getY().toFloat())));
 }
 
 bool bsp(const Point a, const Point b, const Point c, const Point tofind)
 {
-
+	float max;
+	float totalsize = calculate(a, b, c);
+	float  sizec = calculate(a, b, tofind);
+	float  sizeb = calculate(a, tofind, c);
+	float  sizea = calculate(tofind, b, c);
+	if( !sizea || !sizeb || !sizec)
+		return false;
+	max = (sizea + sizeb + sizec);
+	if (max != totalsize)
+		return false;
+	return true;
 }
