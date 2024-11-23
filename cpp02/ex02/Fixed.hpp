@@ -6,12 +6,13 @@
 /*   By: moel-fat <moel-fat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 16:32:54 by moel-fat          #+#    #+#             */
-/*   Updated: 2024/11/21 15:47:05 by moel-fat         ###   ########.fr       */
+/*   Updated: 2024/11/23 14:18:32 by moel-fat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FIXED_HPP
 # define FIXED_HPP
+
 #include <iostream>
 #include <ostream>
 #include <cmath>

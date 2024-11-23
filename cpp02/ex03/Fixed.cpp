@@ -6,27 +6,24 @@
 /*   By: moel-fat <moel-fat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 12:17:11 by moel-fat          #+#    #+#             */
-/*   Updated: 2024/11/21 15:39:18 by moel-fat         ###   ########.fr       */
+/*   Updated: 2024/11/23 14:18:48 by moel-fat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-#include <cmath>
 
 Fixed::Fixed() : Value(0)
 {
-	// std::cout << "Default constructor called" << std::endl;
+
 }
 
 Fixed::Fixed(const Fixed& var)
 {
-	// std::cout << "Copy constructor called" << std::endl;
 	*this = var;
 }
 
 Fixed& Fixed::operator=(const Fixed& var)
 {
-	// std::cout<< "Copy assignment operator calle" << std::endl;
 	if (this != &var)
 		this->Value = var.getRawBits();
 	return *this;
@@ -34,18 +31,16 @@ Fixed& Fixed::operator=(const Fixed& var)
 
 Fixed::~Fixed()
 {
-	// std::cout << "Destructor called" << std::endl;
+
 }
 
 int Fixed::getRawBits() const
 {
-	// std::cout << "getRawBits member function called" << std::endl;
 	return this->Value;
 }
 
 void Fixed::setRawBits(int const raw)
 {
-	// std::cout << "setRawBits member function called" << std::endl;
 	this->Value = raw;
 }
 
@@ -57,13 +52,11 @@ std::ostream& operator<<(std::ostream& out, const Fixed& Fixed)
 
 Fixed::Fixed(int intVlaue)
 {
-	// std::cout << "Int constructor called" << std::endl;
 	this->Value = intVlaue << fractionalbit;
 }
 
 Fixed::Fixed(float floatValue)
 {
-	// std::cout << "Float constructor called" << std::endl;
 	this->Value = static_cast<int>(roundf(floatValue * (1 << fractionalbit)));
 }
 
@@ -107,37 +100,31 @@ bool Fixed::operator != (const Fixed &var) const
 	return (this->Value != var.Value);
 }
 
-//second part
+//second part * / - +
 
 Fixed Fixed::operator + (const Fixed &var) const
 {
-	Fixed n;
-	n.setRawBits(Value + var.getRawBits());
-	return (n);
+	return Fixed(this->toFloat() + var.toFloat());
 }
 
 Fixed Fixed::operator - (const Fixed &var) const
 {
-	Fixed n;
-	n.setRawBits(Value - var.getRawBits());
-	return (n);
+	return Fixed(this->toFloat() - var.toFloat());
 }
+
 Fixed Fixed::operator * (const Fixed &var) const
 {
-	Fixed n;
-	n.setRawBits(Value * var.getRawBits());
-	return (n);
+	return (this->toFloat() * var.toFloat());
 }
+
 Fixed Fixed::operator / (const Fixed &var) const
 {
-	Fixed n;
 	if(var.Value == 0)
 	{
 		std::cerr << "Error: Division by zero" << std::endl;
 		return Fixed(0);
 	}
-	n.setRawBits(Value / var.getRawBits());
-	return (n);
+	return Fixed(this->toFloat() / var.toFloat());
 }
 
 //three part
