@@ -6,7 +6,7 @@
 /*   By: moel-fat <moel-fat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 16:32:54 by moel-fat          #+#    #+#             */
-/*   Updated: 2024/11/23 14:18:32 by moel-fat         ###   ########.fr       */
+/*   Updated: 2024/11/23 14:30:38 by moel-fat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ class Fixed
 		Fixed(const Fixed& var);
 		Fixed& operator=(const Fixed& var);
 		~Fixed();
-		Fixed(int intVlaue);
-		Fixed(float floatValue);
+		Fixed(const int intVlaue);
+		Fixed(const float floatValue);
 
 		int getRawBits(void) const;
 		void setRawBits(int const raw);

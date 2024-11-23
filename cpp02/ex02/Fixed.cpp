@@ -6,7 +6,7 @@
 /*   By: moel-fat <moel-fat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 12:17:11 by moel-fat          #+#    #+#             */
-/*   Updated: 2024/11/23 14:18:24 by moel-fat         ###   ########.fr       */
+/*   Updated: 2024/11/23 14:40:54 by moel-fat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ Fixed::Fixed(const Fixed& var)
 Fixed& Fixed::operator=(const Fixed& var)
 {
 	if (this != &var)
-		this->Value = var.getRawBits();
+		this->Value = var.Value;
 	return *this;
 }
 

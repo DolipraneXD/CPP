@@ -6,7 +6,7 @@
 /*   By: moel-fat <moel-fat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 12:17:11 by moel-fat          #+#    #+#             */
-/*   Updated: 2024/11/16 15:31:46 by moel-fat         ###   ########.fr       */
+/*   Updated: 2024/11/23 14:37:06 by moel-fat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ Fixed& Fixed::operator=(const Fixed& var)
 {
 	std::cout<< "Copy assignment operator calle" << std::endl;
 	if (this != &var)
-		this->Value = var.getRawBits();
+		this->Value = var.Value;
 	return *this;
 }
 
