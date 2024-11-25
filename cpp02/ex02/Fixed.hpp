@@ -6,7 +6,7 @@
 /*   By: moel-fat <moel-fat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 16:32:54 by moel-fat          #+#    #+#             */
-/*   Updated: 2024/11/23 14:30:38 by moel-fat         ###   ########.fr       */
+/*   Updated: 2024/11/25 10:31:25 by moel-fat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ class Fixed
 		int Value;
 		static const int fractionalbit = 8;
 	public:
+	
 		Fixed();
 		Fixed(const Fixed& var);
 		Fixed& operator=(const Fixed& var);
