@@ -1,50 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Point.cpp                                          :+:      :+:    :+:   */
+/*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moel-fat <moel-fat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/22 15:18:13 by moel-fat          #+#    #+#             */
-/*   Updated: 2024/11/23 15:30:08 by moel-fat         ###   ########.fr       */
+/*   Created: 2024/12/06 10:52:36 by moel-fat          #+#    #+#             */
+/*   Updated: 2024/12/06 11:26:14 by moel-fat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Point.hpp"
-#include "Fixed.hpp"
+#include "ClapTrap.hpp"
 
-Point::Point(): x(0), y(0)
+ClapTrap::ClapTrap()
 {
 
 }
-
-Point::~Point(){};
-
-Point::Point(const float fx, const float fy) : x(fx), y(fy)
+ClapTrap::ClapTrap(std::string var) : Name(var) , Hit(10), Energy(10), Attack(0)
 {
-
+	std::cout << Name << "Is Ready to To play " << std::endl;
 }
 
-Point::Point(const Point& var) : x(var.x), y(var.y)
+ClapTrap::~ClapTrap()
 {
-
+	std::cout << Name << "Out for Good " << std::endl;
 }
 
-Point &Point::operator=(const Point& var)
+void ClapTrap::attack(const std::string& target)
 {
-	if (this != &var){
-		(Fixed)this->x = var.x;
-		(Fixed)this->y = var.y;
-	}
-	return (*this);
-}
-
-Fixed Point::getX() const
-{
-	return (x);
-}
-
-Fixed Point::getY() const
-{
-	return (y);
+	
 }
