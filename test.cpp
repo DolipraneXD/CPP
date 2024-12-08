@@ -357,3 +357,92 @@
 
 // 	//your code here
 // }
+
+
+// #include <iostream>
+// using namespace std;
+
+// class Base {
+// public:
+//     virtual void sayHello() {
+//         cout << "Hello from Base!" << endl;
+//     }
+// };
+
+// class Derived : public Base {
+// public:
+//     void sayHello() {
+//         cout << "Hello from Derived!" << endl;
+//     }
+// };
+
+// int main() {
+//     Base* basePtr = new Derived();
+//     basePtr->sayHello();  // Calls Base's sayHello
+//     delete basePtr;
+//     return 0;
+// }
+
+
+// class Base {
+// public:
+//     virtual ~Base() {
+//         cout << "Base destructor" << endl;
+//     }
+// };
+
+// class Derived : public Base {
+// public:
+//     ~Derived() {
+//         cout << "Derived destructor" << endl;
+//     }
+// };
+
+// int main() {
+//     Base* obj = new Derived();
+//     delete obj;  // Correctly calls both destructors
+//     return 0;
+// }
+
+
+// #include <iostream>
+// using namespace std;
+
+// // Base class
+// class Vehicle {
+// public:
+//     virtual void start() { // Virtual function
+//         cout << "Vehicle is starting..." << endl;
+//     }
+
+//     virtual ~Vehicle() {} // Virtual destructor
+// };
+
+// // Derived class 1
+// class Car : public Vehicle {
+// public:
+//     void start() override { // Overriding the base class method
+//         cout << "Car is starting with a key!" << endl;
+//     }
+// };
+
+// // Derived class 2
+// class Bike : public Vehicle {
+// public:
+//     void start() override {
+//         cout << "Bike is starting with a kick!" << endl;
+//     }
+// };
+
+// int main() {
+//     Vehicle* vehicle1 = new Car();  // Base class pointer pointing to a derived class
+//     Vehicle* vehicle2 = new Bike();
+
+//     vehicle1->start(); // Calls Car's start()
+//     vehicle2->start(); // Calls Bike's start()
+
+//     delete vehicle1;
+//     delete vehicle2;
+
+//     return 0;
+// }

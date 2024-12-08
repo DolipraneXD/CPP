@@ -6,12 +6,18 @@
 /*   By: moel-fat <moel-fat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 18:02:12 by moel-fat          #+#    #+#             */
-/*   Updated: 2024/12/08 15:36:46 by moel-fat         ###   ########.fr       */
+/*   Updated: 2024/12/08 18:27:05 by moel-fat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 #include "ClapTrap.hpp"
+#include "FragTrap.hpp"
+
+FragTrap::FragTrap()
+{
+
+}
 
 ScavTrap::ScavTrap(const std::string& name) : ClapTrap(name)
 {
