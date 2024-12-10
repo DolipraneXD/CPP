@@ -6,12 +6,22 @@
 /*   By: moel-fat <moel-fat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/08 17:59:54 by moel-fat          #+#    #+#             */
-/*   Updated: 2024/12/08 18:35:40 by moel-fat         ###   ########.fr       */
+/*   Updated: 2024/12/10 18:07:09 by moel-fat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 #include "ClapTrap.hpp"
+
+// Call the default constructor of ClapTrap
+FragTrap::FragTrap() : ClapTrap()
+{
+    Hit = 100;
+    Energy = 100;
+    Attack = 30;
+    std::cout << "FragTrap Default Constructor: An unnamed FragTrap is born!" << std::endl;
+}
+
 
 FragTrap::FragTrap(const FragTrap& var) : ClapTrap(var)
 {
@@ -37,14 +47,14 @@ FragTrap::FragTrap(const std::string& name) : ClapTrap(name)
 	Hit = 100;
 	Energy = 100;
 	Attack = 30;
-	std::cout << "FragTrap " << Name << " Grady To play" << std::endl;
+	std::cout << "FragTrap " << Name << " Ready To play" << std::endl;
 }
 
 void FragTrap::attack(const std::string &target)
 {
 	if (Hit <= 0 || Energy <= 0)
 	{
-		std::cout << "FragTrap " << Name << " Has no energy to Attack with" << std::endl;
+		std::cout << "FragTrap " << Name << " Has no energy to Attack" << std::endl;
 		return ;
 	}
 

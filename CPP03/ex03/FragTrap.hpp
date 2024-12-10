@@ -6,7 +6,7 @@
 /*   By: moel-fat <moel-fat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/08 17:19:06 by moel-fat          #+#    #+#             */
-/*   Updated: 2024/12/09 18:22:58 by moel-fat         ###   ########.fr       */
+/*   Updated: 2024/12/10 18:38:56 by moel-fat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define FragTrap_HPP
 # include "ClapTrap.hpp"
 
-class FragTrap :virtual public ClapTrap
+class FragTrap : virtual public ClapTrap
 {
 	public:
 		FragTrap();

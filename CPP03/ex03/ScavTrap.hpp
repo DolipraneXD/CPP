@@ -6,7 +6,7 @@
 /*   By: moel-fat <moel-fat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 15:33:59 by moel-fat          #+#    #+#             */
-/*   Updated: 2024/12/09 18:23:04 by moel-fat         ###   ########.fr       */
+/*   Updated: 2024/12/10 18:39:00 by moel-fat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define SCAVTRAP_HPP
 # include "ClapTrap.hpp"
 
-class ScavTrap :virtual public ClapTrap
+class ScavTrap : virtual public ClapTrap
 {
 	public:
 		ScavTrap();

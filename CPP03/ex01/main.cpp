@@ -6,36 +6,36 @@
 /*   By: moel-fat <moel-fat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 11:55:00 by moel-fat          #+#    #+#             */
-/*   Updated: 2024/12/09 13:29:41 by moel-fat         ###   ########.fr       */
+/*   Updated: 2024/12/10 16:46:28 by moel-fat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 
 int main()
 {
-    // Create ClapTrap instance
-    ClapTrap clap1("Clappy");
-    clap1.attack("Target A");
-
-    // Create ScavTrap instance
+    // Test construction
     ScavTrap scav1("Scavvy");
-    scav1.attack("Target B");
+
+    // Test attack
+    scav1.attack("Target Dummy");
+
+    // Test taking damage
     scav1.takeDamage(30);
-    scav1.attack("Target B");
-    scav1.takeDamage(30);
-    scav1.attack("Target B");
-    scav1.takeDamage(30);
-    scav1.beRepaired(20);
+    scav1.takeDamage(80); // Should reduce hit points to 0
+
+    // Test repair
+    scav1.beRepaired(20); // Should not work because hit points are 0
+
+    // Test guard gate mode
     scav1.guardGate();
 
-    // Test construction/destruction chaining
-    ScavTrap scav2(scav1); // Copy constructor
-    scav2.attack("Target C");
+    // Test copy constructor
+    ScavTrap scav2 = scav1;
 
-    ScavTrap scav3("AnotherScav");
-    scav3 = scav1; // Copy assignment operator
-    scav3.attack("amine");
+    // Test assignment operator
+    ScavTrap scav3("Another Scav");
+    scav3 = scav1;
+
     return 0;
 }

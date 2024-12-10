@@ -6,18 +6,21 @@
 /*   By: moel-fat <moel-fat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 18:02:12 by moel-fat          #+#    #+#             */
-/*   Updated: 2024/12/08 18:27:05 by moel-fat         ###   ########.fr       */
+/*   Updated: 2024/12/10 16:58:38 by moel-fat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 #include "ClapTrap.hpp"
-#include "FragTrap.hpp"
 
-FragTrap::FragTrap()
+ScavTrap::ScavTrap() : ClapTrap("unnamed")
 {
-
+    Hit = 100;
+    Energy = 50;
+    Attack = 20;
+    std::cout << "ScavTrap Unnamed Constructor: Ready for action!" << std::endl;
 }
+
 
 ScavTrap::ScavTrap(const std::string& name) : ClapTrap(name)
 {
@@ -30,7 +33,7 @@ ScavTrap::ScavTrap(const std::string& name) : ClapTrap(name)
 
 ScavTrap::ScavTrap(const ScavTrap& var) : ClapTrap(var)
 {
-	std::cout << "ScravTrap " << Name << " hes been Copied" << std::endl;
+	std::cout << "ScavTrap " << Name << " hes been Copied" << std::endl;
 }
 
 ScavTrap& ScavTrap::operator=(const ScavTrap& var)
@@ -38,13 +41,13 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& var)
 	if (this == &var)
 		return (*this);
 	ClapTrap::operator=(var);
-	std::cout << "ScavTrap " << Name << "has been assigned" << std::endl;
+	std::cout << "ScavTrap " << Name << " has been assigned" << std::endl;
 	return (*this);
 }
 
 ScavTrap::~ScavTrap()
 {
-	std::cout << "ScavTrap " << Name << "out for good" << std::endl;
+	std::cout << "ScavTrap " << Name << " out for good" << std::endl;
 }
 
 void ScavTrap::attack(const std::string& target)
