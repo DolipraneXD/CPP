@@ -6,7 +6,7 @@
 /*   By: moel-fat <moel-fat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 14:00:28 by moel-fat          #+#    #+#             */
-/*   Updated: 2024/12/10 18:26:29 by moel-fat         ###   ########.fr       */
+/*   Updated: 2024/12/12 17:01:37 by moel-fat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 class DiamondTrap : public FragTrap, public ScavTrap
 {
 	private:
-		std::string _name; // Renamed from Name to _name to avoid shadowing
+		std::string Name; // Renamed from Name to _name to avoid shadowing
 
 	public:
 		DiamondTrap();
